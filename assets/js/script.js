@@ -13,78 +13,83 @@ var group2 = [redPlayers[1], bluePlayers[2], greenPlayers[3], yellowPlayers[0]];
 var group3 = [redPlayers[2], bluePlayers[3], greenPlayers[0], yellowPlayers[1]];
 var group4 = [redPlayers[3], bluePlayers[0], greenPlayers[1], yellowPlayers[2]];
 
-var p1 = score();
-var p2 = score();
-var p3 = score();
-var p4 = score();
-
 function groupStage() {
-  
-  var match = function(group) {
-
-    var groupPoints = [0, 0, 0, 0];
-    var groupScores = [p1, p2, p3, p4];
+  var match = function (group) {
+    var points = [0, 0, 0, 0];
     console.log(group);
-    console.log("group scores: " + groupScores);
 
-    for (var i = 0; i < group.length - 2; i++) {
+    for (var i = 0; i < group.length - 1; i++) {
 
-      console.log(group[i] + " - vs. - " + group[i + 1]);
-      if (groupScores[i] > groupScores[i + 1]) {
-        console.log(group[i] + " wins: " + groupScores[i] + " to " + groupScores[i + 1]);
-        groupPoints[i]++;
-        groupPoints[i]++;
-        groupPoints[i]++;
-      } else if (groupScores[i] < groupScores[i + 1]) {
-        console.log(group[i + 1] + " wins: " + groupScores[i + 1] + " to " + groupScores[i]);
-        groupPoints[i + 1]++;
-        groupPoints[i + 1]++;
-        groupPoints[i + 1]++;
+      var p1 = score();
+      var p2 = score();
+
+      console.log(group[i] + ": " + p1 + " - " + group[i + 1] + ": " + p2);
+      if (p1 > p2) {
+        console.log("---" + group[i] + " wins");
+        points[i]++;
+        points[i]++;
+      } else if (p1 < p2) {
+        console.log("---" + group[i + 1] + " wins");
+        points[i + 1]++;
+        points[i + 1]++;
       } else {
-        console.log("the match is a tie: " + groupScores[i] + " and " + groupScores[i + 1]);
-        groupPoints[i]++;
-        groupPoints[i + 1]++;
-      }
-
-      console.log(group[i] + " - vs. - " + group[i + 2]);
-      if (groupScores[i] > groupScores[i + 2]) {
-        console.log(group[i] + " wins: " + groupScores[i] + " to " + groupScores[i + 2]);
-        groupPoints[i]++;
-        groupPoints[i]++;
-        groupPoints[i]++;
-      } else if (groupScores[i] < groupScores[i + 2]) {
-        console.log(group[i + 2] + " wins: " + groupScores[i + 2] + " to " + groupScores[i]);
-        groupPoints[i + 2]++;
-        groupPoints[i + 2]++;
-        groupPoints[i + 2]++;
-      } else {
-        console.log("the match is a tie: " + groupScores[i] + " and " + groupScores[i + 2]);
-        groupPoints[i]++;
-        groupPoints[i + 2]++;
+        console.log("--- The players tie");
+        points[i]++;
+        points[i + 1]++;
       }
     }
-    console.log(group[3] + " - vs. " + group[0]);
-    if (groupScores[3] > groupScores[0]) {
-      console.log(group[3] + " wins: " + groupScores[3] + " to " + groupScores[0]);
-      groupPoints[3]++;
-      groupPoints[3]++;
-      groupPoints[3]++;
-    } else if (groupScores[3] < groupScores[0]) {
-      console.log(group[0] + " wins: " + groupScores[0] + " to " + groupScores[3]);
-      groupPoints[0]++;
-      groupPoints[0]++;
-      groupPoints[0]++;
+
+    var p1 = score();
+    var p2 = score();
+
+    console.log(group[3] + ": " + p1 + " - " + group[0] + ": " + p2);
+    if (p1 > p2) {
+      console.log("---" + group[3] + " wins");
+      points[3]++;
+      points[3]++;
+    } else if (p1 < p2) {
+      console.log("---" + group[0] + " wins");
+      points[0]++;
+      points[0]++;
     } else {
-      console.log("the match is a tie: " + groupScores[3] + " and " + groupScores[0]);
-      groupPoints[3]++;
-      groupPoints[0]++;
+      console.log("--- The players tie");
+      points[3]++;
+      points[0]++;
     }
 
-    console.log("group points: " + groupPoints);
-  }
+    var p1 = score();
+    var p2 = score();
+
+    console.log(group[0] + ": " + p1 + " - " + group[2] + ": " + p2);
+    if (p1 > p2) {
+      console.log("---" + group[0] + " wins");
+      points[0]++;
+      points[0]++;
+    } else if (p1 < p2) {
+      console.log("---" + group[2] + " wins");
+      points[2]++;
+      points[2]++;
+    } else {
+      console.log("--- The players tie");
+      points[0]++;
+      points[2]++;
+    }
+
+    var player1 = group[0] + ":(" + points[0] + ") ";
+    var player2 = group[1] + ":(" + points[1] + ") ";
+    var player3 = group[2] + ":(" + points[2] + ") ";
+    var player4 = group[3] + ":(" + points[3] + ") ";
+    var standings = [player1, player2, player3, player4];
+
+    console.log("Group standings:");
+    console.log(standings);
+    console.log("------------------------------------------");
+  };
 
   match(group1);
-
-};
+  match(group2);
+  match(group3);
+  match(group4);
+}
 
 groupStage();
