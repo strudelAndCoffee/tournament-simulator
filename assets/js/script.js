@@ -3,25 +3,136 @@ var bluePlayers = ["Blue E", "Blue F", "Blue G", "Blue H"];
 var greenPlayers = ["Green I", "Green J", "Green K", "Green L"];
 var yellowPlayers = ["Yellow M", "Yellow N", "Yellow O", "Yellow P"];
 
-groupSize = 4;
+var groupSize = 4;
 
 var group1 = [redPlayers[0], bluePlayers[1], greenPlayers[2], yellowPlayers[3]];
 var group2 = [redPlayers[1], bluePlayers[2], greenPlayers[3], yellowPlayers[0]];
 var group3 = [redPlayers[2], bluePlayers[3], greenPlayers[0], yellowPlayers[1]];
 var group4 = [redPlayers[3], bluePlayers[0], greenPlayers[1], yellowPlayers[2]];
 
-for (var i = 0; i < groupSize; i++) {
-    if (i < groupSize - 2) {
-        console.log(group1[i] + " vs. " + group1[i + 1]);
-        console.log(group1[i] + " vs. " + group1[i + 2]);
+var groupStage = function () {
+  var points = [0, 0, 0, 0];
+  var W = 1;
+  var L = 0;
+  var rounds = [r1, r2, r3];
+
+  var groupMatches = function (group) {
+
+    points = [0, 0, 0, 0];
+    console.log(group);
+    for (var i = 0; i <= rounds.length; i++) {
+      if (r1[i] == 1) {
+        points[i]++;
+      }
     }
-    else if (i == groupSize - 2) {
-        console.log(group1[i] + " vs. " + group1[i + 1]);
+    console.log("points after round 1: " + points);
+
+    for (var i = 0; i <= rounds.length; i++) {
+      if (r2[i] == 1) {
+        points[i]++;
+      }
     }
-    else {
-        console.log(group1[i] + " vs. " + group1[0]);
+    console.log("points after round 2: " + points);
+
+    for (var i = 0; i <= rounds.length; i++) {
+      if (r3[i] == 1) {
+        points[i]++;
+      }
     }
-}
+    console.log("points after round 3: " + points);
+
+    for (var i = 0; i < group.length; i++) {
+      group[i] = group[i] + ": " + points[i];
+    }
+
+    console.log("standings: " + group);
+  };
+
+  var r1 = [W, L, W, L];
+  var r2 = [L, W, L, W];
+  var r3 = [W, L, L, W];
+
+  groupMatches(group1);
+
+  var r1 = [L, L, L, L];
+  var r2 = [L, W, L, W];
+  var r3 = [W, W, W, W];
+
+  groupMatches(group2);
+
+  var r1 = [W, W, W, W];
+  var r2 = [W, W, L, L];
+  var r3 = [W, L, W, W];
+
+  groupMatches(group3);
+
+  var r1 = [L, L, W, W];
+  var r2 = [W, W, W, L];
+  var r3 = [L, L, W, W];
+
+  groupMatches(group4);
+};
+
+groupStage();
+
+console.log("group1: " + group1);
+console.log("group2: " + group2);
+console.log("group3: " + group3);
+console.log("group4: " + group4);
+
+//  // Group 1
+//console.log("Group 1 - Matches:");
+//for (var i = 0; i < groupSize; i++) {
+//  if (i < groupSize - 2) {
+//    console.log(group1[i] + " vs. " + group1[i + 1]);
+//    console.log(group1[i] + " vs. " + group1[i + 2]);
+//  } else if (i == groupSize - 2) {
+//    console.log(group1[i] + " vs. " + group1[i + 1]);
+//  } else {
+//    console.log(group1[i] + " vs. " + group1[0]);
+//  }
+//}
+//
+//console.log("Group 1 - Results:");
+//
+//  // Group 2
+//console.log("Group 2 - Matches:");
+//for (var i = 0; i < groupSize; i++) {
+//  if (i < groupSize - 2) {
+//    console.log(group2[i] + " vs. " + group2[i + 1]);
+//    console.log(group2[i] + " vs. " + group2[i + 2]);
+//  } else if (i == groupSize - 2) {
+//    console.log(group2[i] + " vs. " + group2[i + 1]);
+//  } else {
+//    console.log(group2[i] + " vs. " + group2[0]);
+//  }
+//}
+//
+//  // Group 3
+//console.log("Group 3 - Matches:");
+//for (var i = 0; i < groupSize; i++) {
+//  if (i < groupSize - 2) {
+//    console.log(group3[i] + " vs. " + group3[i + 1]);
+//    console.log(group3[i] + " vs. " + group3[i + 2]);
+//  } else if (i == groupSize - 2) {
+//    console.log(group3[i] + " vs. " + group3[i + 1]);
+//  } else {
+//    console.log(group3[i] + " vs. " + group3[0]);
+//  }
+//}
+//
+//  // Group 4
+//console.log("Group 4 - Matches:");
+//for (var i = 0; i < groupSize; i++) {
+//  if (i < groupSize - 2) {
+//    console.log(group4[i] + " vs. " + group4[i + 1]);
+//    console.log(group4[i] + " vs. " + group4[i + 2]);
+//  } else if (i == groupSize - 2) {
+//    console.log(group4[i] + " vs. " + group4[i + 1]);
+//  } else {
+//    console.log(group4[i] + " vs. " + group4[0]);
+//  }
+//}
 
 //var redPlayers = ["Red A", "Red B"];
 //var bluePlayers = ["Blue C", "Blue D"];
@@ -57,7 +168,7 @@ for (var i = 0; i < groupSize; i++) {
 //    var qf4Bscore = 1;
 //    var qf4A = qf4Aplayer + ": " + qf4Ascore;
 //    var qf4B = qf4Bplayer + ": " + qf4Bscore;
-//    
+//
 //    // QUARTER FINAL 1
 //    console.log("Quarter Finals")
 //    console.log("Round 1: " + qf1Aplayer + " - vs. - " +  qf1Bplayer);
@@ -179,4 +290,3 @@ for (var i = 0; i < groupSize; i++) {
 //};
 //
 //game();
-//
