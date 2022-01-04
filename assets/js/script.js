@@ -3,8 +3,25 @@ var bluePlayers = ["Blue E", "Blue F", "Blue G", "Blue H"];
 var greenPlayers = ["Green I", "Green J", "Green K", "Green L"];
 var yellowPlayers = ["Yellow M", "Yellow N", "Yellow O", "Yellow P"];
 
+groupSize = 4;
 
+var group1 = [redPlayers[0], bluePlayers[1], greenPlayers[2], yellowPlayers[3]];
+var group2 = [redPlayers[1], bluePlayers[2], greenPlayers[3], yellowPlayers[0]];
+var group3 = [redPlayers[2], bluePlayers[3], greenPlayers[0], yellowPlayers[1]];
+var group4 = [redPlayers[3], bluePlayers[0], greenPlayers[1], yellowPlayers[2]];
 
+for (var i = 0; i < groupSize; i++) {
+    if (i < groupSize - 2) {
+        console.log(group1[i] + " vs. " + group1[i + 1]);
+        console.log(group1[i] + " vs. " + group1[i + 2]);
+    }
+    else if (i == groupSize - 2) {
+        console.log(group1[i] + " vs. " + group1[i + 1]);
+    }
+    else {
+        console.log(group1[i] + " vs. " + group1[0]);
+    }
+}
 
 //var redPlayers = ["Red A", "Red B"];
 //var bluePlayers = ["Blue C", "Blue D"];
