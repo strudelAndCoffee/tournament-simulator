@@ -5,151 +5,151 @@ var yellowPlayers = ["Yellow G", "Yellow H"];
 
 var game = function() {
 
-    var qF1Aplayer = redPlayers[0];
-    var qF1Bplayer = bluePlayers[1];
-    var qF1Ascore = 1;
-    var qF1Bscore = 0;
-    var qF1A = qF1Aplayer + ": " + qF1Ascore;
-    var qF1B = qF1Bplayer + ": " + qF1Bscore;
+    var qf1Aplayer = redPlayers[0];
+    var qf1Bplayer = bluePlayers[1];
+    var qf1Ascore = 1;
+    var qf1Bscore = 0;
+    var qf1A = qf1Aplayer + ": " + qf1Ascore;
+    var qf1B = qf1Bplayer + ": " + qf1Bscore;
 
-    var qF2Aplayer = redPlayers[1];
-    var qF2Bplayer = greenPlayers[0];
-    var qF2Ascore = 1;
-    var qF2Bscore = 0;
-    var qF2A = qF2Aplayer + ": " + qF2Ascore;
-    var qF2B = qF2Bplayer + ": " + qF2Bscore;
+    var qf2Aplayer = redPlayers[1];
+    var qf2Bplayer = greenPlayers[0];
+    var qf2Ascore = 1;
+    var qf2Bscore = 0;
+    var qf2A = qf2Aplayer + ": " + qf2Ascore;
+    var qf2B = qf2Bplayer + ": " + qf2Bscore;
 
-    var qF3Aplayer = bluePlayers[0];
-    var qF3Bplayer = yellowPlayers[1];
-    var qF3Ascore = 0;
-    var qF3Bscore = 1;
-    var qF3A = qF3Aplayer + ": " + qF3Ascore;
-    var qF3B = qF3Bplayer + ": " + qF3Bscore;
+    var qf3Aplayer = bluePlayers[0];
+    var qf3Bplayer = yellowPlayers[1];
+    var qf3Ascore = 0;
+    var qf3Bscore = 1;
+    var qf3A = qf3Aplayer + ": " + qf3Ascore;
+    var qf3B = qf3Bplayer + ": " + qf3Bscore;
 
-    var qF4Aplayer = yellowPlayers[0];
-    var qF4Bplayer = greenPlayers[1];
-    var qF4Ascore = 0;
-    var qF4Bscore = 1;
-    var qF4A = qF4Aplayer + ": " + qF4Ascore;
-    var qF4B = qF4Bplayer + ": " + qF4Bscore;
+    var qf4Aplayer = yellowPlayers[0];
+    var qf4Bplayer = greenPlayers[1];
+    var qf4Ascore = 0;
+    var qf4Bscore = 1;
+    var qf4A = qf4Aplayer + ": " + qf4Ascore;
+    var qf4B = qf4Bplayer + ": " + qf4Bscore;
     
     // QUARTER FINAL 1
-    window.alert("Quarter Finals")
-    window.alert(qF1Aplayer + " - vs. - " +  qF1Bplayer);
+    console.log("Quarter Finals")
+    console.log("Round 1: " + qf1Aplayer + " - vs. - " +  qf1Bplayer);
 
-    if (qF1Ascore > qF1Bscore) {
-        window.alert(qF1A + " --- " + qF1B);
-        window.alert(qF1Aplayer + " wins the match.");
-        var qF1result = qF1Aplayer;
+    if (qf1Ascore > qf1Bscore) {
+        console.log("Score: " + qf1A + " --- " + qf1B);
+        console.log(qf1Aplayer + " wins the match.");
+        var qf1result = qf1Aplayer;
     }
     else {
-        window.alert(qF1A + " --- " + qF1B);
-        window.alert(qF1Bplayer + " wins the match.");
-        var qF1result = qF1Bplayer;
+        console.log("Score: " + qf1A + " --- " + qf1B);
+        console.log(qf1Bplayer + " wins the match.");
+        var qf1result = qf1Bplayer;
     }
 
-    var qF1winner = qF1result;
-    var qF1score = 1;
+    var qf1winner = qf1result;
+    var qf1score = 1;
 
     // QUARTER FINAL 2
-    window.alert(qF2Aplayer + " - vs. - " +  qF2Bplayer);
+    console.log("Round 2: " + qf2Aplayer + " - vs. - " +  qf2Bplayer);
 
-    if (qF2Ascore > qF2Bscore) {
-        window.alert(qF2A + " --- " + qF2B);
-        window.alert(qF2Aplayer + " wins the match.");
-        var qF2result = qF2Aplayer;
+    if (qf2Ascore > qf2Bscore) {
+        console.log("Score: " + qf2A + " --- " + qf2B);
+        console.log(qf2Aplayer + " wins the match.");
+        var qf2result = qf2Aplayer;
     }
     else {
-        window.alert(qF2A + " --- " + qF2B);
-        window.alert(qF2Bplayer + " wins the match.");
-        var qF2result = qF2Bplayer;
+        console.log("Score: " + qf2A + " --- " + qf2B);
+        console.log(qf2Bplayer + " wins the match.");
+        var qf2result = qf2Bplayer;
     }
 
-    var qF2winner = qF2result;
-    var qF2score = 1;
+    var qf2winner = qf2result;
+    var qf2score = 1;
 
     // QUARTER FINAL 3
-    window.alert(qF3Aplayer + " - vs. - " +  qF3Bplayer);
+    console.log("Round 3: " + qf3Aplayer + " - vs. - " +  qf3Bplayer);
 
-    if (qF3Ascore > qF3Bscore) {
-        window.alert(qF3A + " --- " + qF3B);
-        window.alert(qF3Aplayer + " wins the match.");
-        var qF3result = qF3Aplayer;
+    if (qf3Ascore > qf3Bscore) {
+        console.log("Score: " + qf3A + " --- " + qf3B);
+        console.log(qf3Aplayer + " wins the match.");
+        var qf3result = qf3Aplayer;
     }
     else {
-        window.alert(qF3A + " --- " + qF3B);
-        window.alert(qF3Bplayer + " wins the match.");
-        var qF3result = qF3Bplayer;
+        console.log("Score: " + qf3A + " --- " + qf3B);
+        console.log(qf3Bplayer + " wins the match.");
+        var qf3result = qf3Bplayer;
     }
 
-    var qF3winner = qF3result;
-    var qF3score = 0;
+    var qf3winner = qf3result;
+    var qf3score = 0;
 
     // QUARTER FINAL 4
-    window.alert(qF4Aplayer + " - vs. - " +  qF4Bplayer);
+    console.log("Round 4: " + qf4Aplayer + " - vs. - " +  qf4Bplayer);
 
-    if (qF4Ascore > qF4Bscore) {
-        window.alert(qF4A + " --- " + qF4B);
-        window.alert(qF4Aplayer + " wins the match.");
-        var qF4result = qF4Aplayer;
+    if (qf4Ascore > qf4Bscore) {
+        console.log("Score: " + qf4A + " --- " + qf4B);
+        console.log(qf4Aplayer + " wins the match.");
+        var qf4result = qf4Aplayer;
     }
     else {
-        window.alert(qF4A + " --- " + qF4B);
-        window.alert(qF4Bplayer + " wins the match.");
-        var qF4result = qF4Bplayer;
+        console.log("Score: " + qf4A + " --- " + qf4B);
+        console.log(qf4Bplayer + " wins the match.");
+        var qf4result = qf4Bplayer;
     }
 
-    var qF4winner = qF4result;
-    var qF4score = 0;
+    var qf4winner = qf4result;
+    var qf4score = 0;
 
     //SEMI FINAL 1
-    window.alert("Semi Finals");
-    window.alert(qF1winner + " - vs. - " + qF3winner);
+    console.log("Semi Finals");
+    console.log("Round 1: " + qf1winner + " - vs. - " + qf3winner);
 
-    if (qF1score > qF3score) {
-        window.alert(qF1winner + ": " + qF1score + " --- " + qF3winner + ": " + qF3score);
-        window.alert(qF1winner + " wins the match.");
-        var sF1result = qF1winner;
+    if (qf1score > qf3score) {
+        console.log("Score: " + qf1winner + ": " + qf1score + " --- " + qf3winner + ": " + qf3score);
+        console.log(qf1winner + " wins the match.");
+        var sf1result = qf1winner;
     }
     else {
-        window.alert(qF1winner + ": " + qF1score + " --- " + qF3winner + ": " + qF3score);
-        window.alert(qF3winner + " wins the match.");
-        var sF1result = qF3winner;
+        console.log("Score: " + qf1winner + ": " + qf1score + " --- " + qf3winner + ": " + qf3score);
+        console.log(qf3winner + " wins the match.");
+        var sf1result = qf3winner;
     }
 
-    var sF1winner = sF1result;
-    var sF1score = 1;
+    var sf1winner = sf1result;
+    var sf1score = 1;
 
     //SEMI FINAL 2
-    window.alert(qF2winner + " - vs. - " + qF4winner);
+    console.log("Round 2: " + qf2winner + " - vs. - " + qf4winner);
 
-    if (qF2score > qF4score) {
-        window.alert(qF2winner + ": " + qF2score + " --- " + qF4winner + ": " + qF4score);
-        window.alert(qF2winner + " wins the match.");
-        var sF2result = qF2winner;
+    if (qf2score > qf4score) {
+        console.log("Score: " + qf2winner + ": " + qf2score + " --- " + qf4winner + ": " + qf4score);
+        console.log(qf2winner + " wins the match.");
+        var sf2result = qf2winner;
     }
     else {
-        window.alert(qF2winner + ": " + qF2score + " --- " + qF4winner + ": " + qF4score);
-        window.alert(qF4winner + " wins the match.");
-        var sF2result = qF4winner;
+        console.log("Score: " + qf2winner + ": " + qf2score + " --- " + qf4winner + ": " + qf4score);
+        console.log(qf4winner + " wins the match.");
+        var sf2result = qf4winner;
     }
 
-    var sF2winner = sF2result;
-    var sF2score = 0;
+    var sf2winner = sf2result;
+    var sf2score = 0;
 
     //FINAL
-    window.alert("Final Match");
-    window.alert(sF1winner + " - vs. - " + sF2winner);
+    console.log("Final Match");
+    console.log(sf1winner + " - vs. - " + sf2winner);
 
-    if (sF1score > sF2score) {
-        window.alert(sF1winner + ": " + sF1score + " --- " + sF2winner + ": " + sF2score);
-        window.alert(sF1winner + " wins the game!");
-        var sF2result = sF1winner;
+    if (sf1score > sf2score) {
+        console.log("Score: " + sf1winner + ": " + sf1score + " --- " + sf2winner + ": " + sf2score);
+        console.log(sf1winner + " wins the game!");
+        var sf2result = sf1winner;
     }
     else {
-        window.alert(sF1winner + ": " + sF1score + " --- " + sF2winner + ": " + sF2score);
-        window.alert(sF2winner + " wins the game!");
-        var sF2result = sF2winner;
+        console.log("Score: " + sf1winner + ": " + sf1score + " --- " + sf2winner + ": " + sf2score);
+        console.log(sf2winner + " wins the game!");
+        var sf2result = sf2winner;
     }
 };
 
