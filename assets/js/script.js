@@ -1,3 +1,4 @@
+// code sourced for The University of Texas Code Boot Camp coursework
 var randomNumber = function () {
   var value = Math.floor(Math.random() * 6) + 1;
   return value;
