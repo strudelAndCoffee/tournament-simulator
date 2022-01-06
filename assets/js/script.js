@@ -15,7 +15,7 @@ var shuffleArray = function (array) {
 
 var redPlayer = [
   {
-    name: "A-red",
+    name: "Angus",
     type: "red",
     score: function () {
       var value = randomNumber();
@@ -32,7 +32,7 @@ var redPlayer = [
     advYellow: 0,
   },
   {
-    name: "B-red",
+    name: "Bobby",
     type: "red",
     score: function () {
       var value = randomNumber();
@@ -49,7 +49,7 @@ var redPlayer = [
     advYellow: 0,
   },
   {
-    name: "C-red",
+    name: "Clara",
     type: "red",
     score: function () {
       var value = randomNumber();
@@ -66,7 +66,7 @@ var redPlayer = [
     advYellow: 0,
   },
   {
-    name: "D-red",
+    name: "Dorothy",
     type: "red",
     score: function () {
       var value = randomNumber();
@@ -85,7 +85,7 @@ var redPlayer = [
 ];
 var bluePlayer = [
   {
-    name: "E-blue",
+    name: "Eduardo",
     type: "blue",
     score: function () {
       var value = randomNumber();
@@ -102,7 +102,7 @@ var bluePlayer = [
     advYellow: 0,
   },
   {
-    name: "F-blue",
+    name: "Fiona",
     type: "blue",
     score: function () {
       var value = randomNumber();
@@ -119,7 +119,7 @@ var bluePlayer = [
     advYellow: 0,
   },
   {
-    name: "G-blue",
+    name: "Gabriella",
     type: "blue",
     score: function () {
       var value = randomNumber();
@@ -136,7 +136,7 @@ var bluePlayer = [
     advYellow: 0,
   },
   {
-    name: "H-blue",
+    name: "Hector",
     type: "blue",
     score: function () {
       var value = randomNumber();
@@ -155,7 +155,7 @@ var bluePlayer = [
 ];
 var greenPlayer = [
   {
-    name: "I-green",
+    name: "Isaac",
     type: "green",
     score: function () {
       var value = randomNumber();
@@ -172,7 +172,7 @@ var greenPlayer = [
     advYellow: 0,
   },
   {
-    name: "J-green",
+    name: "Jezebel",
     type: "green",
     score: function () {
       var value = randomNumber();
@@ -189,7 +189,7 @@ var greenPlayer = [
     advYellow: 0,
   },
   {
-    name: "K-green",
+    name: "Kirk",
     type: "green",
     score: function () {
       var value = randomNumber();
@@ -206,7 +206,7 @@ var greenPlayer = [
     advYellow: 0,
   },
   {
-    name: "L-green",
+    name: "Leonardo",
     type: "green",
     score: function () {
       var value = randomNumber();
@@ -225,7 +225,7 @@ var greenPlayer = [
 ];
 var yellowPlayer = [
   {
-    name: "M-yellow",
+    name: "Michelle",
     type: "yellow",
     score: function () {
       var value = randomNumber();
@@ -242,7 +242,7 @@ var yellowPlayer = [
     advYellow: 0,
   },
   {
-    name: "N-yellow",
+    name: "Niles",
     type: "yellow",
     score: function () {
       var value = randomNumber();
@@ -259,7 +259,7 @@ var yellowPlayer = [
     advYellow: 0,
   },
   {
-    name: "O-yellow",
+    name: "Olivia",
     type: "yellow",
     score: function () {
       var value = randomNumber();
@@ -276,7 +276,7 @@ var yellowPlayer = [
     advYellow: 0,
   },
   {
-    name: "P-yellow",
+    name: "Penelope",
     type: "yellow",
     score: function () {
       var value = randomNumber();
