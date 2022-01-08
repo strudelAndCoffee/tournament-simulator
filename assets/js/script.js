@@ -30,6 +30,25 @@ var redPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Bobby",
@@ -47,6 +66,25 @@ var redPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Clara",
@@ -64,6 +102,25 @@ var redPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Dorothy",
@@ -81,6 +138,25 @@ var redPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
 ];
 var bluePlayer = [
@@ -100,6 +176,25 @@ var bluePlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Fiona",
@@ -117,6 +212,25 @@ var bluePlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Gabriella",
@@ -134,6 +248,25 @@ var bluePlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Hector",
@@ -151,6 +284,25 @@ var bluePlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
 ];
 var greenPlayer = [
@@ -170,6 +322,25 @@ var greenPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Jezebel",
@@ -187,6 +358,25 @@ var greenPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Kirk",
@@ -204,6 +394,25 @@ var greenPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Leonardo",
@@ -221,6 +430,25 @@ var greenPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
 ];
 var yellowPlayer = [
@@ -240,6 +468,25 @@ var yellowPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Niles",
@@ -257,6 +504,25 @@ var yellowPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Olivia",
@@ -274,6 +540,25 @@ var yellowPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
   {
     name: "Penelope",
@@ -291,6 +576,25 @@ var yellowPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
+    adv: function(opp) {
+      switch (opp) {
+        case "red":
+          this.advRed++;
+          break;
+        case "blue":
+          this.advBlue++;
+          break;
+        case "green":
+          this.advGreen++;
+          break;
+        case "yellow":
+          this.advYellow++;
+          break;
+        default:
+          console.log(this.name + " object: something broke");
+          break;
+      }
+    },
   },
 ];
 
@@ -364,10 +668,12 @@ function groupStage(group) {
     let p1win = function() {
       round[0].win();
       round[0].win();
+      round[0].adv(round[1].type);
     };
     let p2win = function() {
       round[1].win();
       round[1].win();
+      round[1].adv(round[0].type);
     };
     let tie = function() {
       round[0].win();
@@ -385,7 +691,7 @@ function groupStage(group) {
     } else {
       console.log("--- The players tie the round " + p1score + " to " + p2score);
       tie();
-    };
+    }
   };
 
   groupRound(round1);
@@ -412,3 +718,5 @@ groupStage(group1);
 groupStage(group2);
 groupStage(group3);
 groupStage(group4);
+
+console.log(redPlayer[0].name + " - advRed:" + redPlayer[0].advRed + " - advBlue:" + redPlayer[0].advBlue + " - advGreen:" + redPlayer[0].advGreen + " - advYellow:" + redPlayer[0].advYellow);
