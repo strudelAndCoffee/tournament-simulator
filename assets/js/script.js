@@ -22,7 +22,7 @@ var redPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -30,7 +30,7 @@ var redPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -58,7 +58,7 @@ var redPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -66,7 +66,7 @@ var redPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -94,7 +94,7 @@ var redPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -102,7 +102,7 @@ var redPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -130,7 +130,7 @@ var redPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -138,7 +138,7 @@ var redPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -168,7 +168,7 @@ var bluePlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -176,7 +176,7 @@ var bluePlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -204,7 +204,7 @@ var bluePlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -212,7 +212,7 @@ var bluePlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -240,7 +240,7 @@ var bluePlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -248,7 +248,7 @@ var bluePlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -276,7 +276,7 @@ var bluePlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -284,7 +284,7 @@ var bluePlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -314,7 +314,7 @@ var greenPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -322,7 +322,7 @@ var greenPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -350,7 +350,7 @@ var greenPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -358,7 +358,7 @@ var greenPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -386,7 +386,7 @@ var greenPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -394,7 +394,7 @@ var greenPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -422,7 +422,7 @@ var greenPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -430,7 +430,7 @@ var greenPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -460,7 +460,7 @@ var yellowPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -468,7 +468,7 @@ var yellowPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -496,7 +496,7 @@ var yellowPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -504,7 +504,7 @@ var yellowPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -532,7 +532,7 @@ var yellowPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -540,7 +540,7 @@ var yellowPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -568,7 +568,7 @@ var yellowPlayer = [
       return value;
     },
     points: 0,
-    win: function() {
+    win: function () {
       this.points++;
     },
     rank: 0,
@@ -576,7 +576,7 @@ var yellowPlayer = [
     advBlue: 0,
     advGreen: 0,
     advYellow: 0,
-    adv: function(opp) {
+    adv: function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -623,33 +623,43 @@ var group1 = {
   p1: players[0],
   p2: players[1],
   p3: players[2],
-  p4: players[3]
+  p4: players[3],
 };
 var group2 = {
   name: "Group 2",
   p1: players[4],
   p2: players[5],
   p3: players[6],
-  p4: players[7]
+  p4: players[7],
 };
 var group3 = {
   name: "Group 3",
   p1: players[8],
   p2: players[9],
   p3: players[10],
-  p4: players[11]
+  p4: players[11],
 };
 var group4 = {
   name: "Group 4",
   p1: players[12],
   p2: players[13],
   p3: players[14],
-  p4: players[15]
+  p4: players[15],
 };
 
 function groupStage(group) {
   console.log("| " + group.name + " |");
-  console.log("(" + group.p1.name + ", " + group.p2.name + ", " + group.p3.name + ", " + group.p4.name + ")");
+  console.log(
+    "(" +
+      group.p1.name +
+      ", " +
+      group.p2.name +
+      ", " +
+      group.p3.name +
+      ", " +
+      group.p4.name +
+      ")"
+  );
   console.log("---");
 
   let round1 = [group.p1, group.p2, "Round 1: "];
@@ -665,17 +675,17 @@ function groupStage(group) {
     let player2 = round[1].name;
     let p1score = round[0].score();
     let p2score = round[1].score();
-    let p1win = function() {
+    let p1win = function () {
       round[0].win();
       round[0].win();
       round[0].adv(round[1].type);
     };
-    let p2win = function() {
+    let p2win = function () {
       round[1].win();
       round[1].win();
       round[1].adv(round[0].type);
     };
-    let tie = function() {
+    let tie = function () {
       round[0].win();
       round[1].win();
     };
@@ -689,7 +699,9 @@ function groupStage(group) {
       console.log("--- " + player2 + " wins " + p2score + " to " + p1score);
       p2win();
     } else {
-      console.log("--- The players tie the round " + p1score + " to " + p2score);
+      console.log(
+        "--- The players tie the round " + p1score + " to " + p2score
+      );
       tie();
     }
   };
@@ -702,21 +714,74 @@ function groupStage(group) {
   groupRound(round6);
 
   let groupResults =
-    "| " + group.p1.name + ": " + group.p1.points +
-    "| " + group.p2.name + ": " + group.p2.points +
-    "| " + group.p3.name + ": " + group.p3.points +
-    "| " + group.p4.name + ": " + group.p4.points
-  ;
-
+    "| " +
+    group.p1.name +
+    ": " +
+    group.p1.points +
+    "| " +
+    group.p2.name +
+    ": " +
+    group.p2.points +
+    "| " +
+    group.p3.name +
+    ": " +
+    group.p3.points +
+    "| " +
+    group.p4.name +
+    ": " +
+    group.p4.points;
   console.log("---");
   console.log(group.name + " results:");
   console.log(groupResults);
   console.log("__________________________________________");
-};
+}
 
 groupStage(group1);
 groupStage(group2);
 groupStage(group3);
 groupStage(group4);
 
-console.log(redPlayer[0].name + " - advRed:" + redPlayer[0].advRed + " - advBlue:" + redPlayer[0].advBlue + " - advGreen:" + redPlayer[0].advGreen + " - advYellow:" + redPlayer[0].advYellow);
+console.log(
+  redPlayer[0].name +
+    " - advRed:" +
+    redPlayer[0].advRed +
+    " - advBlue:" +
+    redPlayer[0].advBlue +
+    " - advGreen:" +
+    redPlayer[0].advGreen +
+    " - advYellow:" +
+    redPlayer[0].advYellow
+);
+console.log(
+  redPlayer[1].name +
+    " - advRed:" +
+    redPlayer[1].advRed +
+    " - advBlue:" +
+    redPlayer[1].advBlue +
+    " - advGreen:" +
+    redPlayer[1].advGreen +
+    " - advYellow:" +
+    redPlayer[1].advYellow
+);
+console.log(
+  redPlayer[2].name +
+    " - advRed:" +
+    redPlayer[2].advRed +
+    " - advBlue:" +
+    redPlayer[2].advBlue +
+    " - advGreen:" +
+    redPlayer[2].advGreen +
+    " - advYellow:" +
+    redPlayer[2].advYellow
+);
+console.log(
+  redPlayer[3].name +
+    " - advRed:" +
+    redPlayer[3].advRed +
+    " - advBlue:" +
+    redPlayer[3].advBlue +
+    " - advGreen:" +
+    redPlayer[3].advGreen +
+    " - advYellow:" +
+    redPlayer[3].advYellow
+);
