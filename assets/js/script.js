@@ -212,47 +212,37 @@ groupStage(group2);
 groupStage(group3);
 groupStage(group4);
 
-console.log(
-  redPlayer4.name +
-    " - advRed:" +
-    redPlayer4.advRed +
-    " - advBlue:" +
-    redPlayer4.advBlue +
-    " - advGreen:" +
-    redPlayer4.advGreen +
-    " - advYellow:" +
-    redPlayer4.advYellow
-);
-console.log(
-  redPlayer1.name +
-    " - advRed:" +
-    redPlayer1.advRed +
-    " - advBlue:" +
-    redPlayer1.advBlue +
-    " - advGreen:" +
-    redPlayer1.advGreen +
-    " - advYellow:" +
-    redPlayer1.advYellow
-);
-console.log(
-  redPlayer2.name +
-    " - advRed:" +
-    redPlayer2.advRed +
-    " - advBlue:" +
-    redPlayer2.advBlue +
-    " - advGreen:" +
-    redPlayer2.advGreen +
-    " - advYellow:" +
-    redPlayer2.advYellow
-);
-console.log(
-  redPlayer3.name +
-    " - advRed:" +
-    redPlayer3.advRed +
-    " - advBlue:" +
-    redPlayer3.advBlue +
-    " - advGreen:" +
-    redPlayer3.advGreen +
-    " - advYellow:" +
-    redPlayer3.advYellow
-);
+for (var i = 0; i < (players.length - 1); i++) {
+  sessionStorage.setItem("name:player" + [i], players[i].name);
+  sessionStorage.setItem("type:player" + [i], players[i].type);
+  sessionStorage.setItem("points:player" + [i], players[i].points);
+  sessionStorage.setItem("advRed:player" + [i], players[i].advRed);
+  sessionStorage.setItem("advBlue:player" + [i], players[i].advBlue);
+  sessionStorage.setItem("advGreen:player" + [i], players[i].advGreen);
+  sessionStorage.setItem("advYellow:player" + [i], players[i].advYellow);
+}
+
+var playerSelect = function() {
+  var x = window.prompt("Enter Player Number");
+  var playerStats = [
+    "Name:",
+    sessionStorage.getItem("name:player" + x),
+    "| Type:",
+    sessionStorage.getItem("type:player" + x),
+    "| Points:",
+    sessionStorage.getItem("points:player" + x),
+    "| Adv. Red:",
+    sessionStorage.getItem("advRed:player" + x),
+    "| Adv. Blue:",
+    sessionStorage.getItem("advBlue:player" + x),
+    "| Adv. Green:",
+    sessionStorage.getItem("advGreen:player" + x),
+    "| Adv. Yellow:",
+    sessionStorage.getItem("advYellow:player" + x)
+  ];
+  var value = playerStats.join(" ");
+  
+  console.log(value);
+};
+
+playerSelect();
