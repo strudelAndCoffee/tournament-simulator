@@ -13,24 +13,24 @@ var shuffleArray = function (array) {
   }
 };
 
-var redPlayer = [
-  {
-    name: "Angus",
-    type: "red",
-    score: function () {
+class Player {
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+    this.score = function () {
       var value = randomNumber();
       return value;
-    },
-    points: 0,
-    win: function () {
+    };
+    this.points = 0;
+    this.win = function () {
       this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
+    };
+    this.rank = 0;
+    this.advRed = 0;
+    this.advBlue = 0;
+    this.advGreen = 0;
+    this.advYellow = 0;
+    this.adv = function (opp) {
       switch (opp) {
         case "red":
           this.advRed++;
@@ -48,573 +48,44 @@ var redPlayer = [
           console.log(this.name + " object: something broke");
           break;
       }
-    },
-  },
-  {
-    name: "Bobby",
-    type: "red",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Clara",
-    type: "red",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Dorothy",
-    type: "red",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-];
-var bluePlayer = [
-  {
-    name: "Eduardo",
-    type: "blue",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Fiona",
-    type: "blue",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Gabriella",
-    type: "blue",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Hector",
-    type: "blue",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-];
-var greenPlayer = [
-  {
-    name: "Isaac",
-    type: "green",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Jezebel",
-    type: "green",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Kirk",
-    type: "green",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Leonardo",
-    type: "green",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-];
-var yellowPlayer = [
-  {
-    name: "Michelle",
-    type: "yellow",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Niles",
-    type: "yellow",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Olivia",
-    type: "yellow",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-  {
-    name: "Penelope",
-    type: "yellow",
-    score: function () {
-      var value = randomNumber();
-      return value;
-    },
-    points: 0,
-    win: function () {
-      this.points++;
-    },
-    rank: 0,
-    advRed: 0,
-    advBlue: 0,
-    advGreen: 0,
-    advYellow: 0,
-    adv: function (opp) {
-      switch (opp) {
-        case "red":
-          this.advRed++;
-          break;
-        case "blue":
-          this.advBlue++;
-          break;
-        case "green":
-          this.advGreen++;
-          break;
-        case "yellow":
-          this.advYellow++;
-          break;
-        default:
-          console.log(this.name + " object: something broke");
-          break;
-      }
-    },
-  },
-];
+    }
+  }
+};
+
+var redPlayer1 = new Player("Angus", "red");
+var redPlayer2 = new Player("Bobby", "red");
+var redPlayer3 = new Player("Clara", "red");
+var redPlayer4 = new Player("Dorothy", "red");
+var bluePlayer1 = new Player("Eduardo", "blue");
+var bluePlayer2 = new Player("Fiona", "blue");
+var bluePlayer3 = new Player("Gabriella", "blue");
+var bluePlayer4 = new Player("Hector", "blue");
+var greenPlayer1 = new Player("Isaac", "green");
+var greenPlayer2 = new Player("Jezebel", "green");
+var greenPlayer3 = new Player("Kirk", "green");
+var greenPlayer4 = new Player("Leonardo", "green");
+var yellowPlayer1 = new Player("Michelle", "yellow");
+var yellowPlayer2 = new Player("Niles", "yellow");
+var yellowPlayer3 = new Player("Olivia", "yellow");
+var yellowPlayer4 = new Player("Penelope", "yellow");
 
 var players = [
-  redPlayer[0],
-  redPlayer[1],
-  redPlayer[2],
-  redPlayer[3],
-  bluePlayer[0],
-  bluePlayer[1],
-  bluePlayer[2],
-  bluePlayer[3],
-  greenPlayer[0],
-  greenPlayer[1],
-  greenPlayer[2],
-  greenPlayer[3],
-  yellowPlayer[0],
-  yellowPlayer[1],
-  yellowPlayer[2],
-  yellowPlayer[3],
+  redPlayer1,
+  redPlayer2,
+  redPlayer3,
+  redPlayer4,
+  bluePlayer1,
+  bluePlayer2,
+  bluePlayer3,
+  bluePlayer4,
+  greenPlayer1,
+  greenPlayer2,
+  greenPlayer3,
+  greenPlayer4,
+  yellowPlayer1,
+  yellowPlayer2,
+  yellowPlayer3,
+  yellowPlayer4,
 ];
 shuffleArray(players);
 
@@ -742,46 +213,46 @@ groupStage(group3);
 groupStage(group4);
 
 console.log(
-  redPlayer[0].name +
+  redPlayer4.name +
     " - advRed:" +
-    redPlayer[0].advRed +
+    redPlayer4.advRed +
     " - advBlue:" +
-    redPlayer[0].advBlue +
+    redPlayer4.advBlue +
     " - advGreen:" +
-    redPlayer[0].advGreen +
+    redPlayer4.advGreen +
     " - advYellow:" +
-    redPlayer[0].advYellow
+    redPlayer4.advYellow
 );
 console.log(
-  redPlayer[1].name +
+  redPlayer1.name +
     " - advRed:" +
-    redPlayer[1].advRed +
+    redPlayer1.advRed +
     " - advBlue:" +
-    redPlayer[1].advBlue +
+    redPlayer1.advBlue +
     " - advGreen:" +
-    redPlayer[1].advGreen +
+    redPlayer1.advGreen +
     " - advYellow:" +
-    redPlayer[1].advYellow
+    redPlayer1.advYellow
 );
 console.log(
-  redPlayer[2].name +
+  redPlayer2.name +
     " - advRed:" +
-    redPlayer[2].advRed +
+    redPlayer2.advRed +
     " - advBlue:" +
-    redPlayer[2].advBlue +
+    redPlayer2.advBlue +
     " - advGreen:" +
-    redPlayer[2].advGreen +
+    redPlayer2.advGreen +
     " - advYellow:" +
-    redPlayer[2].advYellow
+    redPlayer2.advYellow
 );
 console.log(
-  redPlayer[3].name +
+  redPlayer3.name +
     " - advRed:" +
-    redPlayer[3].advRed +
+    redPlayer3.advRed +
     " - advBlue:" +
-    redPlayer[3].advBlue +
+    redPlayer3.advBlue +
     " - advGreen:" +
-    redPlayer[3].advGreen +
+    redPlayer3.advGreen +
     " - advYellow:" +
-    redPlayer[3].advYellow
+    redPlayer3.advYellow
 );
