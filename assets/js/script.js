@@ -26,23 +26,23 @@ class Player {
       this.points++;
     };
     this.rank = 0;
-    this.advRed = 0;
-    this.advBlue = 0;
-    this.advGreen = 0;
-    this.advYellow = 0;
+    this.Red = 0;
+    this.Blue = 0;
+    this.Green = 0;
+    this.Yellow = 0;
     this.adv = function (opp) {
       switch (opp) {
-        case "red":
-          this.advRed++;
+        case "Red":
+          this.Red++;
           break;
-        case "blue":
-          this.advBlue++;
+        case "Blue":
+          this.Blue++;
           break;
-        case "green":
-          this.advGreen++;
+        case "Green":
+          this.Green++;
           break;
-        case "yellow":
-          this.advYellow++;
+        case "Yellow":
+          this.Yellow++;
           break;
         default:
           console.log(this.name + " object: something broke");
@@ -52,22 +52,22 @@ class Player {
   }
 };
 
-var redPlayer1 = new Player("Angus", "red");
-var redPlayer2 = new Player("Bobby", "red");
-var redPlayer3 = new Player("Clara", "red");
-var redPlayer4 = new Player("Dorothy", "red");
-var bluePlayer1 = new Player("Eduardo", "blue");
-var bluePlayer2 = new Player("Fiona", "blue");
-var bluePlayer3 = new Player("Gabriella", "blue");
-var bluePlayer4 = new Player("Hector", "blue");
-var greenPlayer1 = new Player("Isaac", "green");
-var greenPlayer2 = new Player("Jezebel", "green");
-var greenPlayer3 = new Player("Kirk", "green");
-var greenPlayer4 = new Player("Leonardo", "green");
-var yellowPlayer1 = new Player("Michelle", "yellow");
-var yellowPlayer2 = new Player("Niles", "yellow");
-var yellowPlayer3 = new Player("Olivia", "yellow");
-var yellowPlayer4 = new Player("Penelope", "yellow");
+var redPlayer1 = new Player("Angus", "Red");
+var redPlayer2 = new Player("Bobby", "Red");
+var redPlayer3 = new Player("Clara", "Red");
+var redPlayer4 = new Player("Dorothy", "Red");
+var bluePlayer1 = new Player("Eduardo", "Blue");
+var bluePlayer2 = new Player("Fiona", "Blue");
+var bluePlayer3 = new Player("Gabriella", "Blue");
+var bluePlayer4 = new Player("Hector", "Blue");
+var greenPlayer1 = new Player("Isaac", "Green");
+var greenPlayer2 = new Player("Jezebel", "Green");
+var greenPlayer3 = new Player("Kirk", "Green");
+var greenPlayer4 = new Player("Leonardo", "Green");
+var yellowPlayer1 = new Player("Michelle", "Yellow");
+var yellowPlayer2 = new Player("Niles", "Yellow");
+var yellowPlayer3 = new Player("Olivia", "Yellow");
+var yellowPlayer4 = new Player("Penelope", "Yellow");
 
 var players = [
   redPlayer1,
@@ -139,6 +139,13 @@ function groupStage(group) {
   let round4 = [group.p2, group.p4, "Round 4: "];
   let round5 = [group.p4, group.p1, "Round 5: "];
   let round6 = [group.p3, group.p2, "Round 6: "];
+  let round7 = [group.p2, group.p1, "Round 7: "];
+  let round8 = [group.p4, group.p3, "Round 8: "];
+  let round9 = [group.p3, group.p1, "Round 9: "];
+  let round10 = [group.p4, group.p2, "Round 10: "];
+  let round11 = [group.p1, group.p4, "Round 11: "];
+  let round12 = [group.p2, group.p3, "Round 12: "];
+  
 
   let groupRound = function (round) {
     let roundNumber = round[2];
@@ -146,6 +153,69 @@ function groupStage(group) {
     let player2 = round[1].name;
     let p1score = round[0].score();
     let p2score = round[1].score();
+
+    let playerAdv = function() {
+      let p1type = round[0].type;
+      let p1advRed = round[0].Red;
+      let p1advBlue = round[0].Blue;
+      let p1advGreen = round[0].Green;
+      let p1advYellow = round[0].Yellow;
+      let p2type = round[1].type;
+      let p2advRed = round[1].Red;
+      let p2advBlue = round[1].Blue;
+      let p2advGreen = round[1].Green;
+      let p2advYellow = round[1].Yellow;
+
+      switch(p2type) {
+        case "Red":
+          if (p1advRed > 0) {
+            p1score = round[0].score() + 1;
+          }
+          break;
+        case "Blue":
+          if (p1advBlue > 0) {
+            p1score = round[0].score() + 1;
+          }
+          break;
+        case "Green":
+          if (p1advGreen > 0) {
+            p1score = round[0].score() + 1;
+          }
+          break;
+        case "Yellow":
+          if (p1advYellow > 0) {
+            p1score = round[0].score() + 1;
+          }
+          break;
+        default:
+          break;
+      }
+      switch(p1type) {
+        case "Red":
+          if (p2advRed > 0) {
+            p2score = round[0].score() + 1;
+          }
+          break;
+        case "Blue":
+          if (p2advBlue > 0) {
+            p2score = round[0].score() + 1;
+          }
+          break;
+        case "Green":
+          if (p2advGreen > 0) {
+            p2score = round[0].score() + 1;
+          }
+          break;
+        case "Yellow":
+          if (p2advYellow > 0) {
+            p2score = round[0].score() + 1;
+          }
+          break;
+        default:
+          break;
+      }
+    };
+
     let p1win = function () {
       round[0].win();
       round[0].win();
@@ -162,6 +232,8 @@ function groupStage(group) {
     };
 
     console.log(roundNumber + player1 + " vs. " + player2);
+
+    playerAdv();
 
     if (p1score > p2score) {
       console.log("--- " + player1 + " wins " + p1score + " to " + p2score);
@@ -183,24 +255,31 @@ function groupStage(group) {
   groupRound(round4);
   groupRound(round5);
   groupRound(round6);
+  groupRound(round7);
+  groupRound(round8);
+  groupRound(round9);
+  groupRound(round10);
+  groupRound(round11);
+  groupRound(round12);
 
-  let groupResults =
+  var groupPoints = [
+    group.p1.points + ": " + group.p1.name,
+    group.p2.points + ": " + group.p2.name,
+    group.p3.points + ": " + group.p3.name,
+    group.p4.points + ": " + group.p4.name
+  ];
+  groupPoints.sort();
+
+  var groupResults =
     "| " +
-    group.p1.name +
-    ": " +
-    group.p1.points +
+    groupPoints[3] +
     "| " +
-    group.p2.name +
-    ": " +
-    group.p2.points +
+    groupPoints[2] +
     "| " +
-    group.p3.name +
-    ": " +
-    group.p3.points +
+    groupPoints[1] +
     "| " +
-    group.p4.name +
-    ": " +
-    group.p4.points;
+    groupPoints[0];
+
   console.log("---");
   console.log(group.name + " results:");
   console.log(groupResults);
@@ -216,14 +295,14 @@ for (var i = 0; i < (players.length - 1); i++) {
   sessionStorage.setItem("name:player" + [i], players[i].name);
   sessionStorage.setItem("type:player" + [i], players[i].type);
   sessionStorage.setItem("points:player" + [i], players[i].points);
-  sessionStorage.setItem("advRed:player" + [i], players[i].advRed);
-  sessionStorage.setItem("advBlue:player" + [i], players[i].advBlue);
-  sessionStorage.setItem("advGreen:player" + [i], players[i].advGreen);
-  sessionStorage.setItem("advYellow:player" + [i], players[i].advYellow);
+  sessionStorage.setItem("Red:player" + [i], players[i].Red);
+  sessionStorage.setItem("Blue:player" + [i], players[i].Blue);
+  sessionStorage.setItem("Green:player" + [i], players[i].Green);
+  sessionStorage.setItem("Yellow:player" + [i], players[i].Yellow);
 }
 
 var playerSelect = function() {
-  var x = window.prompt("Enter Player Number");
+  var x = window.prompt("Enter player number to review player stats");
   var playerStats = [
     "Name:",
     sessionStorage.getItem("name:player" + x),
@@ -232,13 +311,13 @@ var playerSelect = function() {
     "| Points:",
     sessionStorage.getItem("points:player" + x),
     "| Adv. Red:",
-    sessionStorage.getItem("advRed:player" + x),
+    sessionStorage.getItem("Red:player" + x),
     "| Adv. Blue:",
-    sessionStorage.getItem("advBlue:player" + x),
+    sessionStorage.getItem("Blue:player" + x),
     "| Adv. Green:",
-    sessionStorage.getItem("advGreen:player" + x),
+    sessionStorage.getItem("Green:player" + x),
     "| Adv. Yellow:",
-    sessionStorage.getItem("advYellow:player" + x)
+    sessionStorage.getItem("Yellow:player" + x)
   ];
   var value = playerStats.join(" ");
   
