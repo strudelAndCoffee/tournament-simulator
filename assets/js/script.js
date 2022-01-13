@@ -119,6 +119,7 @@ var group4 = {
 };
 
 function groupStage(group) {
+  // Group header
   console.log("| " + group.name + " |");
   console.log(
     "(" +
@@ -133,28 +134,29 @@ function groupStage(group) {
   );
   console.log("---");
 
-  let round1 = [group.p1, group.p2, "Round 1: "];
-  let round2 = [group.p3, group.p4, "Round 2: "];
-  let round3 = [group.p1, group.p3, "Round 3: "];
-  let round4 = [group.p2, group.p4, "Round 4: "];
-  let round5 = [group.p4, group.p1, "Round 5: "];
-  let round6 = [group.p3, group.p2, "Round 6: "];
-  let round7 = [group.p2, group.p1, "Round 7: "];
-  let round8 = [group.p4, group.p3, "Round 8: "];
-  let round9 = [group.p3, group.p1, "Round 9: "];
-  let round10 = [group.p4, group.p2, "Round 10: "];
-  let round11 = [group.p1, group.p4, "Round 11: "];
-  let round12 = [group.p2, group.p3, "Round 12: "];
+  // Group matchups
+  var round1 = [group.p1, group.p2, "Round 1: "];
+  var round2 = [group.p3, group.p4, "Round 2: "];
+  var round3 = [group.p1, group.p3, "Round 3: "];
+  var round4 = [group.p2, group.p4, "Round 4: "];
+  var round5 = [group.p4, group.p1, "Round 5: "];
+  var round6 = [group.p3, group.p2, "Round 6: "];
+  var round7 = [group.p2, group.p1, "Round 7: "];
+  var round8 = [group.p4, group.p3, "Round 8: "];
+  var round9 = [group.p3, group.p1, "Round 9: "];
+  var round10 = [group.p4, group.p2, "Round 10: "];
+  var round11 = [group.p1, group.p4, "Round 11: "];
+  var round12 = [group.p2, group.p3, "Round 12: "];
   
+  // Round simulation
+  var groupRound = function (round) {
+    var roundNumber = round[2];
+    var player1 = round[0].name;
+    var player2 = round[1].name;
+    var p1score = round[0].score();
+    var p2score = round[1].score();
 
-  let groupRound = function (round) {
-    let roundNumber = round[2];
-    let player1 = round[0].name;
-    let player2 = round[1].name;
-    let p1score = round[0].score();
-    let p2score = round[1].score();
-
-    let playerAdv = function() {
+    var playerAdv = function() {
       let p1type = round[0].type;
       let p1advRed = round[0].Red;
       let p1advBlue = round[0].Blue;
@@ -166,25 +168,50 @@ function groupStage(group) {
       let p2advGreen = round[1].Green;
       let p2advYellow = round[1].Yellow;
 
+      // Player advantage mechanic
       switch(p2type) {
         case "Red":
-          if (p1advRed > 0) {
-            p1score = round[0].score() + 1;
+          if (p1advRed > 2) {
+            p1score = round[0].score() + 3;
+          } 
+          else if (p1advRed > 1) {
+            p1score = round[0].score() + 2;
+          } 
+          else {
+            p1score = round[0].score();
           }
           break;
         case "Blue":
-          if (p1advBlue > 0) {
-            p1score = round[0].score() + 1;
+          if (p1advBlue > 2) {
+            p1score = round[0].score() + 3;
+          } 
+          else if (p1advBlue > 1) {
+            p1score = round[0].score() + 2;
+          } 
+          else {
+            p1score = round[0].score();
           }
           break;
         case "Green":
-          if (p1advGreen > 0) {
-            p1score = round[0].score() + 1;
+          if (p1advGreen > 2) {
+            p1score = round[0].score() + 3;
+          }
+          else if (p1advGreen > 1) {
+            p1score = round[0].score() + 2;
+          }
+          else {
+            p1score = round[0].score();
           }
           break;
         case "Yellow":
-          if (p1advYellow > 0) {
-            p1score = round[0].score() + 1;
+          if (p1advYellow > 2) {
+            p1score = round[0].score() + 3;
+          }
+          else if (p1advYellow > 1) {
+            p1score = round[0].score() + 2;
+          }
+          else {
+            p1score = round[0].score();
           }
           break;
         default:
@@ -192,23 +219,47 @@ function groupStage(group) {
       }
       switch(p1type) {
         case "Red":
-          if (p2advRed > 0) {
-            p2score = round[0].score() + 1;
+          if (p2advRed > 2) {
+            p2score = round[1].score() + 3;
+          }
+          else if (p2advRed > 1) {
+            p2score = round[1].score() + 2;
+          }
+          else {
+            p2score = round[1].score();
           }
           break;
         case "Blue":
-          if (p2advBlue > 0) {
-            p2score = round[0].score() + 1;
+          if (p2advBlue > 2) {
+            p2score = round[1].score() + 3;
+          }
+          else if (p2advBlue > 1) {
+            p2score = round[1].score() + 2;
+          }
+          else {
+            p2score = round[1].score();
           }
           break;
         case "Green":
-          if (p2advGreen > 0) {
-            p2score = round[0].score() + 1;
+          if (p2advGreen > 2) {
+            p2score = round[1].score() + 3;
+          }
+          else if (p2advGreen > 1) {
+            p2score = round[1].score() + 2;
+          }
+          else {
+            p2score = round[1].score();
           }
           break;
         case "Yellow":
-          if (p2advYellow > 0) {
-            p2score = round[0].score() + 1;
+          if (p2advYellow > 2) {
+            p2score = round[1].score() + 3;
+          }
+          else if (p2advYellow > 1) {
+            p2score = round[1].score() + 2;
+          }
+          else {
+            p2score = round[1].score();
           }
           break;
         default:
@@ -216,25 +267,32 @@ function groupStage(group) {
       }
     };
 
-    let p1win = function () {
+    // Round outcome mechanics
+    var p1win = function () {
       round[0].win();
       round[0].win();
-      round[0].adv(round[1].type);
+      if (p1score >= 5 && p2score <= 2) {
+        round[0].adv(round[1].type);
+      }
     };
-    let p2win = function () {
+    var p2win = function () {
       round[1].win();
       round[1].win();
-      round[1].adv(round[0].type);
+      if (p2score >= 5 && p1score <= 2) {
+        round[1].adv(round[0].type);
+      }
     };
-    let tie = function () {
+    var tie = function () {
       round[0].win();
       round[1].win();
     };
 
+    // Round header
     console.log(roundNumber + player1 + " vs. " + player2);
 
     playerAdv();
 
+    // Round outcome determiner
     if (p1score > p2score) {
       console.log("--- " + player1 + " wins " + p1score + " to " + p2score);
       p1win();
@@ -262,6 +320,7 @@ function groupStage(group) {
   groupRound(round11);
   groupRound(round12);
 
+  // Group outcome info
   var groupPoints = [
     group.p1.points + ": " + group.p1.name,
     group.p2.points + ": " + group.p2.name,
@@ -280,6 +339,7 @@ function groupStage(group) {
     "| " +
     groupPoints[0];
 
+  // Group outcome footer
   console.log("---");
   console.log(group.name + " results:");
   console.log(groupResults);
