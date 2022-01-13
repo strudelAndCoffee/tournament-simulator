@@ -142,139 +142,31 @@ function groupStage(group) {
   var groupBoxArea = document.getElementById(groupInfo);
 
   // Group matchups
-  var round1 = [group.p1, group.p2, "Round 1: "];
-  var round2 = [group.p3, group.p4, "Round 2: "];
-  var round3 = [group.p1, group.p3, "Round 3: "];
-  var round4 = [group.p2, group.p4, "Round 4: "];
-  var round5 = [group.p4, group.p1, "Round 5: "];
-  var round6 = [group.p3, group.p2, "Round 6: "];
-  var round7 = [group.p2, group.p1, "Round 7: "];
-  var round8 = [group.p4, group.p3, "Round 8: "];
-  var round9 = [group.p3, group.p1, "Round 9: "];
-  var round10 = [group.p4, group.p2, "Round 10: "];
-  var round11 = [group.p1, group.p4, "Round 11: "];
-  var round12 = [group.p2, group.p3, "Round 12: "];
+  var round1 = [group.p1, group.p2, group.p3, group.p4, "Round 1: "];
+  var round2 = [group.p1, group.p3, group.p2, group.p4, "Round 2: "];
+  var round3 = [group.p4, group.p1, group.p3, group.p2, "Round 3: "];
+  var round4 = [group.p2, group.p1, group.p4, group.p3, "Round 4: "];
+  var round5 = [group.p3, group.p1, group.p4, group.p2, "Round 5: "];
+  var round6 = [group.p1, group.p4, group.p2, group.p3, "Round 6: "];
   
   // Round simulation
   var groupRound = function (round) {
 
-    var roundNumber = round[2];
+    var roundNumber = round[4];
     var player1 = round[0].name;
     var player2 = round[1].name;
+    var player3 = round[2].name;
+    var player4 = round[3].name;
     var p1score = round[0].score();
     var p2score = round[1].score();
-    var roundResults = "";
-
-    var playerAdv = function() {
-      let p1type = round[0].type;
-      let p1advRed = round[0].Red;
-      let p1advBlue = round[0].Blue;
-      let p1advGreen = round[0].Green;
-      let p1advYellow = round[0].Yellow;
-      let p2type = round[1].type;
-      let p2advRed = round[1].Red;
-      let p2advBlue = round[1].Blue;
-      let p2advGreen = round[1].Green;
-      let p2advYellow = round[1].Yellow;
-
-      // Player advantage mechanic
-      switch(p2type) {
-        case "Red":
-          if (p1advRed > 2) {
-            p1score = round[0].score() + 3;
-          } 
-          else if (p1advRed > 1) {
-            p1score = round[0].score() + 2;
-          } 
-          else {
-            p1score = round[0].score();
-          }
-          break;
-        case "Blue":
-          if (p1advBlue > 2) {
-            p1score = round[0].score() + 3;
-          } 
-          else if (p1advBlue > 1) {
-            p1score = round[0].score() + 2;
-          } 
-          else {
-            p1score = round[0].score();
-          }
-          break;
-        case "Green":
-          if (p1advGreen > 2) {
-            p1score = round[0].score() + 3;
-          }
-          else if (p1advGreen > 1) {
-            p1score = round[0].score() + 2;
-          }
-          else {
-            p1score = round[0].score();
-          }
-          break;
-        case "Yellow":
-          if (p1advYellow > 2) {
-            p1score = round[0].score() + 3;
-          }
-          else if (p1advYellow > 1) {
-            p1score = round[0].score() + 2;
-          }
-          else {
-            p1score = round[0].score();
-          }
-          break;
-        default:
-          break;
-      }
-      switch(p1type) {
-        case "Red":
-          if (p2advRed > 2) {
-            p2score = round[1].score() + 3;
-          }
-          else if (p2advRed > 1) {
-            p2score = round[1].score() + 2;
-          }
-          else {
-            p2score = round[1].score();
-          }
-          break;
-        case "Blue":
-          if (p2advBlue > 2) {
-            p2score = round[1].score() + 3;
-          }
-          else if (p2advBlue > 1) {
-            p2score = round[1].score() + 2;
-          }
-          else {
-            p2score = round[1].score();
-          }
-          break;
-        case "Green":
-          if (p2advGreen > 2) {
-            p2score = round[1].score() + 3;
-          }
-          else if (p2advGreen > 1) {
-            p2score = round[1].score() + 2;
-          }
-          else {
-            p2score = round[1].score();
-          }
-          break;
-        case "Yellow":
-          if (p2advYellow > 2) {
-            p2score = round[1].score() + 3;
-          }
-          else if (p2advYellow > 1) {
-            p2score = round[1].score() + 2;
-          }
-          else {
-            p2score = round[1].score();
-          }
-          break;
-        default:
-          break;
-      }
-    };
+    var p3score = round[2].score();
+    var p4score = round[3].score();
+    var match1Scores = player1 + ": " + p1score + " --- " + p2score + " :" + player2;
+    var match1Results = "";
+    var match2Scores = player3 + ": " + p3score + " --- " + p4score + " :" + player4;
+    var match2Results = "";
+    var roundItemEl = document.createElement("article");
+    roundItemEl.className = "round-item";
 
     // Round outcome mechanics
     var p1win = function () {
@@ -291,48 +183,111 @@ function groupStage(group) {
         round[1].adv(round[0].type);
       }
     };
-    var tie = function () {
+    var p12tie = function () {
       round[0].win();
       round[1].win();
     };
+    var p3win = function () {
+      round[2].win();
+      round[2].win();
+      if (p3score >= 5 && p4score <= 2) {
+        round[2].adv(round[3].type);
+      }
+    };
+    var p4win = function () {
+      round[3].win();
+      round[3].win();
+      if (p4score >= 5 && p3score <= 2) {
+        round[3].adv(round[2].type);
+      }
+    };
+    var p34tie = function () {
+      round[2].win();
+      round[3].win();
+    };
 
     // Round match up display
-    var createRoundHeader = function(){
-
-      var roundHeader = roundNumber + player1 + " vs. " + player2;
+    var createRoundHeader = function() {
+      var roundHeader = roundNumber;
       var roundHeaderEl = document.createElement("h4");
-      roundHeaderEl.className = "round-header";
+      roundHeaderEl.className = "round-header1";
       roundHeaderEl.textContent = roundHeader;
 
-      groupBoxArea.appendChild(roundHeaderEl);
+      roundItemEl.appendChild(roundHeaderEl);
+    }
+    var createMatch1Header = function() {
+      var match1Players = player1 + " vs. " + player2;
+      var match1PlayersEl = document.createElement("h4");
+      match1PlayersEl.className = "round-header2";
+      match1PlayersEl.textContent = match1Players;
+
+      roundItemEl.appendChild(match1PlayersEl);
+    };
+    var createMatch2Header = function() {
+      var match2Players = player3 + " vs. " + player4;
+      var match2PlayersEl = document.createElement("h4");
+      match2PlayersEl.className = "round-header2";
+      match2PlayersEl.textContent = match2Players;
+
+      roundItemEl.appendChild(match2PlayersEl);
     };
 
     // Round results display
-    var createRoundInfo = function() {
+    var createMatch1Info = function() {
+      var match1ResultsEl = document.createElement("p");
+      match1ResultsEl.className = "round-results";
+      match1ResultsEl.innerHTML = match1Scores + "<br />" + match1Results;
 
-      var roundResultsEl = document.createElement("p");
-      roundResultsEl.className = "round-results";
-      roundResultsEl.textContent = roundResults;
-
-      groupBoxArea.appendChild(roundResultsEl);
+      roundItemEl.appendChild(match1ResultsEl);
     };
-    
-    playerAdv();
+    var createMatch2Info = function() {
 
-    // Round outcome determiner
-    if (p1score > p2score) {
-      roundResults = player1 + " wins " + p1score + " to " + p2score;
-      p1win();
-    } else if (p1score < p2score) {
-      roundResults = player2 + " wins " + p2score + " to " + p1score;
-      p2win();
-    } else {
-      roundResults = "The players tie the round " + p1score + " to " + p2score;
-      tie();
-    }
+      var match2ResultsEl = document.createElement("p");
+      match2ResultsEl.className = "round-results";
+      match2ResultsEl.innerHTML = match2Scores + "<br />" + match2Results;
+
+      roundItemEl.appendChild(match2ResultsEl);
+    };
 
     createRoundHeader();
-    createRoundInfo();
+
+    // Round outcome determiner
+    var match = function() {
+
+      createMatch1Header();
+
+      for (var i = 3; i > 0; i--) {
+        if (p1score > p2score) {
+          match1Results = player1 + " wins.";
+          p1win();
+        } else if (p1score < p2score) {
+          match1Results = player2 + " wins.";
+          p2win();
+        } else {
+          match1Results = player1 + " and " + player2 + " tie the round.";
+          p12tie();
+        }
+        createMatch1Info();
+      }
+
+      createMatch2Header();
+
+      for (var i = 3; i > 0; i--) {
+        if (p3score > p4score) {
+          match2Results = player3 + " wins.";
+          p3win();
+        } else if (p3score < p4score) {
+          match2Results = player4 + " wins.";
+          p4win();
+        } else {
+          match2Results = player3 + " and " + player4 + " tie the round.";
+          p34tie();
+        }
+        createMatch2Info();
+      }
+    }
+     match();
+    groupBoxArea.appendChild(roundItemEl);
   };
 
   groupRound(round1);
@@ -341,12 +296,6 @@ function groupStage(group) {
   groupRound(round4);
   groupRound(round5);
   groupRound(round6);
-  groupRound(round7);
-  groupRound(round8);
-  groupRound(round9);
-  groupRound(round10);
-  groupRound(round11);
-  groupRound(round12);
 
   // Group outcome info
   var groupPoints = [
