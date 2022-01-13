@@ -383,5 +383,3 @@ var playerSelect = function() {
   
   console.log(value);
 };
-
-playerSelect();
