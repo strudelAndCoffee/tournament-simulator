@@ -95,6 +95,8 @@ var group1 = {
   p2: players[1],
   p3: players[2],
   p4: players[3],
+  info: "group-1-info",
+  players: "group-1-players",
 };
 var group2 = {
   name: "Group 2",
@@ -102,6 +104,8 @@ var group2 = {
   p2: players[5],
   p3: players[6],
   p4: players[7],
+  info: "group-2-info",
+  players: "group-2-players",
 };
 var group3 = {
   name: "Group 3",
@@ -109,6 +113,8 @@ var group3 = {
   p2: players[9],
   p3: players[10],
   p4: players[11],
+  info: "group-3-info",
+  players: "group-3-players",
 };
 var group4 = {
   name: "Group 4",
@@ -116,23 +122,21 @@ var group4 = {
   p2: players[13],
   p3: players[14],
   p4: players[15],
+  info: "group-4-info",
+  players: "group-4-players",
 };
 
 function groupStage(group) {
+
   // Group header
-  console.log("| " + group.name + " |");
-  console.log(
-    "(" +
-      group.p1.name +
-      ", " +
-      group.p2.name +
-      ", " +
-      group.p3.name +
-      ", " +
-      group.p4.name +
-      ")"
-  );
-  console.log("---");
+  var groupPlayers = "Players: " + group.p1.name + ", " + group.p2.name + ", " + group.p3.name + ", " + group.p4.name;
+  var groupHeader = group.players;
+  JSON.stringify(groupHeader);
+  var groupInfo = group.info;
+  JSON.stringify(groupInfo);
+  var groupBoxHeader = document.getElementById(groupHeader);
+  groupBoxHeader.textContent = groupPlayers;
+  var groupBoxArea = document.getElementById(groupInfo);
 
   // Group matchups
   var round1 = [group.p1, group.p2, "Round 1: "];
@@ -340,10 +344,8 @@ function groupStage(group) {
     groupPoints[0];
 
   // Group outcome footer
-  console.log("---");
-  console.log(group.name + " results:");
-  console.log(groupResults);
-  console.log("__________________________________________");
+  groupBoxArea.textContent = group.name + " results:";
+  groupBoxArea.textContent = groupResults;
 }
 
 groupStage(group1);
