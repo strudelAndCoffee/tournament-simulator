@@ -368,12 +368,7 @@ function groupStage(group) {
 
   // Group outcome footer
   groupBoxFooter.textContent = groupResults;
-}
-
-groupStage(group1);
-groupStage(group2);
-groupStage(group3);
-groupStage(group4);
+};
 
 for (var i = 0; i < (players.length - 1); i++) {
   sessionStorage.setItem("name:player" + [i], players[i].name);
@@ -383,7 +378,7 @@ for (var i = 0; i < (players.length - 1); i++) {
   sessionStorage.setItem("Blue:player" + [i], players[i].Blue);
   sessionStorage.setItem("Green:player" + [i], players[i].Green);
   sessionStorage.setItem("Yellow:player" + [i], players[i].Yellow);
-}
+};
 
 var playerSelect = function() {
   var x = window.prompt("Enter player number to review player stats");
@@ -407,3 +402,19 @@ var playerSelect = function() {
   
   console.log(value);
 };
+
+function simulateTournament() {
+  var answer = window.confirm("Run Group Stage Simulation?");
+
+  if (!answer) {
+    return;
+  }
+  else {
+    groupStage(group1);
+    groupStage(group2);
+    groupStage(group3);
+    groupStage(group4);
+  }
+};
+
+simulateTournament();

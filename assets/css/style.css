@@ -6,27 +6,55 @@ header, main {
     text-align: center;
 }
 
+header {
+    font-size: 25px;
+}
+
 .container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .group-section {
-    width: 24%;
+    flex-shrink: 0;
+    width: 48%;
     border: 1px solid black;
     text-align: center;
+    margin: 0 8px 28px 8px;
+}
+
+.group-section h2 {
+    background-color: lightgray;
+    margin: 0;
+    padding: 12px 0;
 }
 
 .group-info {
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
     border: 1px solid black;
-    margin: 0 5px;
+    margin: 0 2px;
 }
 
 .round-header {
+    width: 48%;
     font-style: italic;
     background-color: lightgray;
+    flex-grow: 0;
+    margin: 8px 0;
+    padding: 6px 0;
 }
 
 .round-results {
-    font-family: 'Courier New', Courier, monospace;
+    width: 48%;
+    flex-grow: 0;
+    margin: 18px 0;
+    padding: 0;
 }
