@@ -95,8 +95,7 @@ var group1 = {
   p2: players[1],
   p3: players[2],
   p4: players[3],
-  info: "group-1-info",
-  players: "group-1-players",
+  id: "group-1-",
 };
 var group2 = {
   name: "Group 2",
@@ -104,8 +103,7 @@ var group2 = {
   p2: players[5],
   p3: players[6],
   p4: players[7],
-  info: "group-2-info",
-  players: "group-2-players",
+  id: "group-2-",
 };
 var group3 = {
   name: "Group 3",
@@ -113,8 +111,7 @@ var group3 = {
   p2: players[9],
   p3: players[10],
   p4: players[11],
-  info: "group-3-info",
-  players: "group-3-players",
+  id: "group-3-",
 };
 var group4 = {
   name: "Group 4",
@@ -122,20 +119,26 @@ var group4 = {
   p2: players[13],
   p3: players[14],
   p4: players[15],
-  info: "group-4-info",
-  players: "group-4-players",
+  id: "group-4-",
 };
 
 function groupStage(group) {
 
   // Group header
-  var groupPlayers = "Players: " + group.p1.name + ", " + group.p2.name + ", " + group.p3.name + ", " + group.p4.name;
-  var groupHeader = group.players;
+  var groupPlayers = group.p1.name + ", " + group.p2.name + ", " + group.p3.name + ", " + group.p4.name;
+  var groupHeader = group.id + "players";
   JSON.stringify(groupHeader);
-  var groupInfo = group.info;
-  JSON.stringify(groupInfo);
   var groupBoxHeader = document.getElementById(groupHeader);
   groupBoxHeader.textContent = groupPlayers;
+
+  // Group footer
+  var groupFooter = group.id + "footer";
+  JSON.stringify(groupFooter);
+  var groupBoxFooter = document.getElementById(groupFooter);
+
+  // Group main box area
+  var groupInfo = group.id + "info";
+  JSON.stringify(groupInfo);
   var groupBoxArea = document.getElementById(groupInfo);
 
   // Group matchups
@@ -154,11 +157,13 @@ function groupStage(group) {
   
   // Round simulation
   var groupRound = function (round) {
+
     var roundNumber = round[2];
     var player1 = round[0].name;
     var player2 = round[1].name;
     var p1score = round[0].score();
     var p2score = round[1].score();
+    var roundResults = "";
 
     var playerAdv = function() {
       let p1type = round[0].type;
@@ -291,24 +296,43 @@ function groupStage(group) {
       round[1].win();
     };
 
-    // Round header
-    console.log(roundNumber + player1 + " vs. " + player2);
+    // Round match up display
+    var createRoundHeader = function(){
 
+      var roundHeader = roundNumber + player1 + " vs. " + player2;
+      var roundHeaderEl = document.createElement("h4");
+      roundHeaderEl.className = "round-header";
+      roundHeaderEl.textContent = roundHeader;
+
+      groupBoxArea.appendChild(roundHeaderEl);
+    };
+
+    // Round results display
+    var createRoundInfo = function() {
+
+      var roundResultsEl = document.createElement("p");
+      roundResultsEl.className = "round-results";
+      roundResultsEl.textContent = roundResults;
+
+      groupBoxArea.appendChild(roundResultsEl);
+    };
+    
     playerAdv();
 
     // Round outcome determiner
     if (p1score > p2score) {
-      console.log("--- " + player1 + " wins " + p1score + " to " + p2score);
+      roundResults = player1 + " wins " + p1score + " to " + p2score;
       p1win();
     } else if (p1score < p2score) {
-      console.log("--- " + player2 + " wins " + p2score + " to " + p1score);
+      roundResults = player2 + " wins " + p2score + " to " + p1score;
       p2win();
     } else {
-      console.log(
-        "--- The players tie the round " + p1score + " to " + p2score
-      );
+      roundResults = "The players tie the round " + p1score + " to " + p2score;
       tie();
     }
+
+    createRoundHeader();
+    createRoundInfo();
   };
 
   groupRound(round1);
@@ -334,18 +358,16 @@ function groupStage(group) {
   groupPoints.sort();
 
   var groupResults =
-    "| " +
     groupPoints[3] +
-    "| " +
+    " | " +
     groupPoints[2] +
-    "| " +
+    " | " +
     groupPoints[1] +
-    "| " +
+    " | " +
     groupPoints[0];
 
   // Group outcome footer
-  groupBoxArea.textContent = group.name + " results:";
-  groupBoxArea.textContent = groupResults;
+  groupBoxFooter.textContent = groupResults;
 }
 
 groupStage(group1);
