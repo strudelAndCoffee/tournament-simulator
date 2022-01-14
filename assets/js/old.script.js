@@ -52,40 +52,40 @@ class Player {
   }
 }
 
-var redPlayer1 = new Player("Angus", "Red");
-var redPlayer2 = new Player("Bobby", "Red");
-var redPlayer3 = new Player("Clara", "Red");
-var redPlayer4 = new Player("Dorothy", "Red");
-var bluePlayer1 = new Player("Eduardo", "Blue");
-var bluePlayer2 = new Player("Fiona", "Blue");
-var bluePlayer3 = new Player("Gabriella", "Blue");
-var bluePlayer4 = new Player("Hector", "Blue");
-var greenPlayer1 = new Player("Isaac", "Green");
-var greenPlayer2 = new Player("Jezebel", "Green");
-var greenPlayer3 = new Player("Kirk", "Green");
-var greenPlayer4 = new Player("Leonardo", "Green");
-var yellowPlayer1 = new Player("Michelle", "Yellow");
-var yellowPlayer2 = new Player("Niles", "Yellow");
-var yellowPlayer3 = new Player("Olivia", "Yellow");
-var yellowPlayer4 = new Player("Penelope", "Yellow");
+var player1 = new Player("Angus(", "Red");
+var player2 = new Player("Bobby", "Red");
+var player3 = new Player("Clara", "Red");
+var player4 = new Player("Dorothy", "Red");
+var player5 = new Player("Eduardo", "Blue");
+var player6 = new Player("Fiona", "Blue");
+var player7 = new Player("Gabriella", "Blue");
+var player8 = new Player("Hector", "Blue");
+var player9 = new Player("Isaac", "Green");
+var player10 = new Player("Jezebel", "Green");
+var player11 = new Player("Kirk", "Green");
+var player12 = new Player("Leonardo", "Green");
+var player13 = new Player("Michelle", "Yellow");
+var player14 = new Player("Niles", "Yellow");
+var player15 = new Player("Olivia", "Yellow");
+var player16 = new Player("Penelope", "Yellow");
 
 var players = [
-  redPlayer1,
-  redPlayer2,
-  redPlayer3,
-  redPlayer4,
-  bluePlayer1,
-  bluePlayer2,
-  bluePlayer3,
-  bluePlayer4,
-  greenPlayer1,
-  greenPlayer2,
-  greenPlayer3,
-  greenPlayer4,
-  yellowPlayer1,
-  yellowPlayer2,
-  yellowPlayer3,
-  yellowPlayer4,
+  player1,
+  player2,
+  player3,
+  player4,
+  player5,
+  player6,
+  player7,
+  player8,
+  player9,
+  player10,
+  player11,
+  player12,
+  player13,
+  player14,
+  player15,
+  player16,
 ];
 shuffleArray(players);
 
