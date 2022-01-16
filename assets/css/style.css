@@ -69,6 +69,7 @@ header, main {
     margin: 5px 0 18px 0;
 }
 
+/* Style for tablet sized screens */
 @media screen and (max-width: 980px) {
     .container {
         flex-direction: column;
@@ -82,7 +83,8 @@ header, main {
     }
 }
 
-@media screen and (max-width: 540px) {
+/* Style for phone sized screens */
+@media screen and (max-width: 500px) {
     .group-info {
         height: auto;
         flex-wrap: nowrap;
