@@ -258,7 +258,7 @@ var calculateResults = function() {
 var runTieBreaker = function (m, p1, p2, adv) {
   let round = [m, p1, p2, adv];
   console.log(round);
-  console.log("round 3: the tie breaker");
+  console.log("round 3: tie breaker");
 };
 
 runGroupStage(group1);
